@@ -8,10 +8,32 @@ import {
   Platform,
   Keyboard,
   TouchableWithoutFeedback,
+  TouchableOpacity,
 } from "react-native";
 
 export default function TextInputBox() {
   const [text, setText] = useState("");
+
+  const handleSubmit = async () => {
+    Keyboard.dismiss();
+  
+    try {
+      const response = await fetch("http://128.189.196.182:3000/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ data: text }),
+      });
+  
+      const json = await response.json();
+      console.log("AI response:", json);
+  
+      setText("");
+    } catch (error) {
+      console.error("Error sending to backend:", error);
+    }
+  };
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -19,10 +41,10 @@ export default function TextInputBox() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.container}
       >
-        <Text style={styles.label}>Enter something:</Text>
+        <Text style={styles.label}>Symptom Input</Text>
         <TextInput
           style={styles.input}
-          placeholder="Type here..."
+          placeholder="Describe your symptoms here..."
           value={text}
           onChangeText={setText}
           returnKeyType="done"
@@ -30,7 +52,11 @@ export default function TextInputBox() {
           multiline={true}
           textAlignVertical="top"
         />
-        <Text style={styles.preview}>You typed: {text}</Text>
+        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+          <Text style={styles.buttonText}>Submit</Text>
+        </TouchableOpacity>
+
+        {/* <Text style={styles.preview}>You typed: {text}</Text> */}
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
   );
@@ -44,8 +70,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   label: {
-    fontSize: 18,
-    marginBottom: 8,
+    fontSize: 25,
+    marginBottom: 10,
+    textAlign: "center",
   },
   input: {
     height: 200,
@@ -58,9 +85,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#f9f9f9",
     textAlignVertical: "top",
   },
+  button: {
+    marginTop: 20,
+    backgroundColor: "#007AFF",
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+    alignSelf: "center",
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "600",
+  },
   preview: {
     marginTop: 20,
     fontSize: 16,
     color: "#555",
+    textAlign: "center",
   },
 });
