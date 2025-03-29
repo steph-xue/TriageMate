@@ -2,7 +2,11 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from './index'; // Adjust path if needed
+
+type RootStackParamList = {
+    LandingPage: undefined;
+    TextInputBox: undefined;
+}
 
 type LandingPageNavProp = NativeStackNavigationProp<RootStackParamList, 'LandingPage'>;
 
