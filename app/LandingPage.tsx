@@ -1,23 +1,13 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, Button } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-
-type RootStackParamList = {
-    LandingPage: undefined;
-    TextInputBox: undefined;
-}
-
-type LandingPageNavProp = NativeStackNavigationProp<RootStackParamList, 'LandingPage'>;
+import { router } from 'expo-router';
 
 export default function LandingPage() {
-  const navigation = useNavigation<LandingPageNavProp>();
-
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={require('../assets/images/TriageMate.png')} />
       <Text style={styles.title}>Speak or type your symptoms in any language</Text>
-      <Button title="Go to Input" onPress={() => navigation.navigate('TextInputBox')} />
+      <Button title="Go to Input" onPress={() => router.push('/input')} />
     </View>
   );
 }
