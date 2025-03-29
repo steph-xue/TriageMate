@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, Button } from 'react-native';
+import { View, Text, Image, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
@@ -17,7 +17,9 @@ export default function LandingPage() {
     <View style={styles.container}>
       <Image style={styles.image} source={require('../assets/images/TriageMate.png')} />
       <Text style={styles.title}>Speak or type your symptoms in any language</Text>
-      <Button title="Go to Input" onPress={() => navigation.navigate('TextInputBox')} />
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('TextInputBox')}>
+        <Text style={styles.buttonText}>Start</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -27,16 +29,31 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f3f3f1',
+    backgroundColor: '#0b2c52',
   },
   image: {
-    width: 200,
-    height: 200,
-    marginBottom: 20,
+    width: 400,
+    height: 400,
+    marginTop: 30,
   },
   title: {
     fontSize: 18,
-    marginBottom: 20,
+    fontWeight: 700,
+    color: '#ffffff',
+    marginBottom: 40,
+    textAlign: 'center',
+  },
+  button: {
+    backgroundColor: '#ffffff',
+    marginVertical: 30,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 8,
+  },
+  buttonText: {
+    fontSize: 22,
+    fontWeight: '700',
+    color: '#0b2c52',
     textAlign: 'center',
   },
 });

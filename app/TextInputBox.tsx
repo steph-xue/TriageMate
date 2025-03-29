@@ -42,7 +42,7 @@ export default function TextInputBox() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.container}
       >
-        <Text style={styles.label}>Symptom Input</Text>
+        <Text style={styles.label}>Input Your Symptoms: </Text>
         <TextInput
           style={styles.input}
           placeholder="Describe your symptoms here..."
@@ -68,15 +68,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     paddingHorizontal: 20,
-    backgroundColor: "#fff",
+    backgroundColor: '#0b2c52',
   },
   label: {
     fontSize: 25,
+    fontWeight: 700,
+    color: '#ffffff',
+    marginTop: 30,
     marginBottom: 10,
     textAlign: "center",
   },
   input: {
-    height: 200,
+    height: 500,
     borderColor: "#999",
     borderWidth: 1,
     borderRadius: 8,
@@ -85,19 +88,20 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: "#f9f9f9",
     textAlignVertical: "top",
+    marginVertical: 20,
   },
   button: {
-    marginTop: 20,
-    backgroundColor: "#007AFF",
+    backgroundColor: '#ffffff',
+    marginVertical: 40,
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 8,
-    alignSelf: "center",
   },
   buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "600",
+    fontSize: 22,
+    fontWeight: '700',
+    color: '#0b2c52',
+    textAlign: 'center',
   },
   preview: {
     marginTop: 20,
