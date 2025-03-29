@@ -65,39 +65,49 @@ export default function InputScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    paddingHorizontal: 20,
-    backgroundColor: "#fff",
-  },
-  label: {
-    fontSize: 25,
-    marginBottom: 10,
-    textAlign: "center",
-  },
-  input: {
-    height: 200,
-    borderColor: "#999",
-    borderWidth: 1,
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    paddingTop: 12,
-    fontSize: 16,
-    backgroundColor: "#f9f9f9",
-    textAlignVertical: "top",
-  },
-  button: {
-    marginTop: 20,
-    backgroundColor: "#007AFF",
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-    alignSelf: "center",
-  },
-  buttonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "600",
-  },
-});
+    container: {
+      flex: 1,
+      justifyContent: "center",
+      paddingHorizontal: 20,
+      backgroundColor: '#0b2c52',
+    },
+    label: {
+      fontSize: 25,
+      fontWeight: 700,
+      color: '#ffffff',
+      marginTop: 30,
+      marginBottom: 10,
+      textAlign: "center",
+    },
+    input: {
+      height: 500,
+      borderColor: "#999",
+      borderWidth: 1,
+      borderRadius: 8,
+      paddingHorizontal: 12,
+      paddingTop: 12,
+      fontSize: 16,
+      backgroundColor: "#f9f9f9",
+      textAlignVertical: "top",
+      marginVertical: 20,
+    },
+    button: {
+      backgroundColor: '#ffffff',
+      marginVertical: 40,
+      paddingVertical: 12,
+      paddingHorizontal: 24,
+      borderRadius: 8,
+    },
+    buttonText: {
+      fontSize: 22,
+      fontWeight: '700',
+      color: '#0b2c52',
+      textAlign: 'center',
+    },
+    preview: {
+      marginTop: 20,
+      fontSize: 16,
+      color: "#555",
+      textAlign: "center",
+    },
+  });
