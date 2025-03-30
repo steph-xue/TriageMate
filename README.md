@@ -3,7 +3,7 @@
 </h1>
 
 <h2 align="center">
-  An AI-powered symptom translation and parser for more efficient healthcare triage - Empowering patients, supporting providers
+  An AI-powered symptom translation and parser for more efficient hospital triage - Empowering patients, supporting providers
 </h2>
 
 Devpost link: https://devpost.com/software/TriageMate
