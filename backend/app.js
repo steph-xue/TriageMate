@@ -14,10 +14,10 @@ app.use(express.json());
 app.use(cors());
 const port = process.env.PORT || 3000;
 
-var corsOption = {
-  origin: ["http://localhost:8081", "http://localhost:3000"],
-  optionsSuccessStatus: 200,
-};
+// var corsOption = {
+//   origin: ["https://localhost:8081", "https://localhost:3000", "https://128.189.196.182:8081", "https://128.189.196.182:3000/"],
+//   optionsSuccessStatus: 200,
+// };
 
 const triageResponse = {
   chiefComplaint: String,
@@ -40,9 +40,10 @@ const triageSchema = new mongoose.Schema({
 
 const TriageResponse = mongoose.model("TriageResponse", triageSchema);
 
-app.post('/', cors(corsOption), async (req, res) => {
+app.post('/', async (req, res) => {
   try {
     const text = req.body.data;
+    console.log(text);
     const triagePrompt = `You are a multilingual medical triage assistant. Here is the user’s free-text symptom description: ${text}. Given the user's free-text symptom description in any language, do the following:  
 
     Translate the input into English (if not already in English).  
@@ -98,7 +99,7 @@ app.post('/', cors(corsOption), async (req, res) => {
 });
 
 // get triage response history
-app.get('/', cors(corsOption), async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     const result = await TriageResponse.find({});
     res.json(result);
@@ -115,7 +116,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('Successfully connected to MongoDB.');
 
-  app.listen(port, () => {
+  app.listen(port, '0.0.0.0', () => {
     console.log(`Server is running on port: ${port}`);
   });
 });
