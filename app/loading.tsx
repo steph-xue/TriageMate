@@ -7,11 +7,7 @@ export default function LoadingScreen() {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-          router.push({
-            pathname: "/result",
-            params: triage, // pass the same data forward
-          });
-        }, 3000);
+        }, 5000);
     
         return () => clearTimeout(timer);
       }, []);

@@ -19,7 +19,7 @@ export default function InputScreen() {
 
   const handleSubmit = async () => {
     Keyboard.dismiss();
-    router.push("/loading");
+    router.push("/result");
 
     try {
       await fetch("http://206.87.155.227:3000/", {
@@ -69,9 +69,10 @@ export default function InputScreen() {
         <TextInput
           style={styles.input}
           placeholder="Describe your symptoms here..."
+          placeholderTextColor="#999"
           value={text}
           onChangeText={setText}
-          returnKeyType="done"
+          returnKeyType="default"
           keyboardType="default"
           multiline={true}
           textAlignVertical="top"
