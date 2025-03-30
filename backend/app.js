@@ -108,6 +108,34 @@ app.get('/', async (req, res) => {
   }
 });
 
+app.get('/:id', async (req, res) => {
+  try {
+    const result = await TriageResponse.findById(req.params.id);
+    if (!result) {
+      return res.status(404).json({ error: 'Profile not found' });
+    }
+    res.json(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// delete a triage response
+app.delete('/:id', async (req, res) => {
+  try {
+    const result = await TriageResponse.findByIdAndDelete(req.params.id);
+    if (!result) {
+      return res.status(404).json({ error: 'Profile not found' });
+    }
+    console.log("1 document deleted");
+    res.json(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 mongoose.connect(database_uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 
