@@ -18,7 +18,7 @@ export default function InputScreen() {
 
   const handleSubmit = async () => {
     Keyboard.dismiss();
-    // router.push("/loading");
+    router.push("/loading");
 
     try {
       await fetch("http://206.87.155.227:3000/", {
@@ -36,6 +36,18 @@ export default function InputScreen() {
       })
       .then(data => {
         setTriageResponse(data.response.triageResponse);
+        const triage = data.response.triageResponse;
+
+      router.push({
+        pathname: "/loading",
+        params: {
+          chiefComplaint: triage.chiefComplaint,
+          symptomDetails: triage.symptomDetails,
+          riskFactors: triage.riskFactors,
+          redFlags: triage.redFlags,
+        },
+      });
+
         setText("");
       })
       .catch(error => {

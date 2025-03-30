@@ -32,6 +32,24 @@ export default function RootLayout() {
             headerShadowVisible: false
         }}
       />
+      <Stack.Screen
+        name="loading"
+        options={{ 
+            title: "",
+            headerStyle: { backgroundColor: '#1c2447' },
+            headerTintColor: '#fff', 
+            headerShadowVisible: false
+        }}
+      />
+      <Stack.Screen
+        name="result"
+        options={{ 
+            title: "result",
+            headerStyle: { backgroundColor: '#1c2447' },
+            headerTintColor: '#fff', 
+            headerShadowVisible: false
+        }}
+      />
     </Stack>
   );
 }
