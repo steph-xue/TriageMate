@@ -14,6 +14,11 @@ app.use(express.json());
 app.use(cors());
 const port = process.env.PORT || 3000;
 
+// var corsOption = {
+//   origin: ["http://localhost:8081", "http://localhost:3000"],
+//   optionsSuccessStatus: 200,
+// };
+
 const triageResponse = {
   chiefComplaint: String,
   symptomDetails: String,
@@ -35,7 +40,6 @@ const triageSchema = new mongoose.Schema({
 
 const TriageResponse = mongoose.model("TriageResponse", triageSchema);
 
-// make triage response
 app.post('/', async (req, res) => {
   try {
     const text = req.body.data;
@@ -93,7 +97,7 @@ app.post('/', async (req, res) => {
   }
 });
 
-// get all triage response history
+// get triage response history
 app.get('/', async (req, res) => {
   try {
     const result = await TriageResponse.find({});
