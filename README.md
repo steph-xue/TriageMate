@@ -36,6 +36,14 @@ Users can:
 
 <br>
 
+<p align="center">
+  <img src="assets/screenshots/layout1.png" alt="logo" width="800"/>
+</p>
+
+<p align="center">
+  <img src="assets/screenshots/layout2.png" alt="logo" width="800"/>
+</p>
+
 ## Features
 
 ### Landing screen
@@ -54,9 +62,11 @@ Users can:
 - Allows
 
 <p align="center">
-  <img src="assets/screenshots/input1.jpg" alt="input1" height="500" style="margin-right: 100px;" />
+  <img src="assets/screenshots/input1.jpg" alt="input1" height="500" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/screenshots/input2.jpg" alt="input2" height="500" />
 </p>
+
 
 ### Processing screen
 - Allows 
@@ -67,9 +77,11 @@ Users can:
 ### Triage results screen
 - Allows 
 <p align="center">
-  <img src="assets/screenshots/results1.jpg" alt="results1" height="500" style="margin-right: 100px;" />
+  <img src="assets/screenshots/results1.jpg" alt="results1" height="500" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/screenshots/results2.jpg" alt="results2" height="500" />
 </p>
+
 
 ### Submission successs screen
 - Allows 
