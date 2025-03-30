@@ -22,7 +22,7 @@ export default function InputScreen() {
     router.push("/loading");
 
     try {
-      await fetch("http://206.87.155.227:3000/", {
+      await fetch("http://206.87.156.57:3000/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
