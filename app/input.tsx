@@ -40,7 +40,7 @@ export default function InputScreen() {
         const triage = data.response.triageResponse;
 
       router.push({
-        pathname: "/loading",
+        pathname: "/result",
         params: {
           chiefComplaint: triage.chiefComplaint,
           symptomDetails: triage.symptomDetails,
@@ -69,9 +69,10 @@ export default function InputScreen() {
         <TextInput
           style={styles.input}
           placeholder="Describe your symptoms here..."
+          placeholderTextColor="#999"
           value={text}
           onChangeText={setText}
-          returnKeyType="done"
+          returnKeyType="default"
           keyboardType="default"
           multiline={true}
           textAlignVertical="top"
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
     button: {
       backgroundColor: '#ffffff',
       marginVertical: 40,
-      paddingVertical: 12,
+      paddingVertical: 16,
       paddingHorizontal: 50,
       borderRadius: 8,
     },

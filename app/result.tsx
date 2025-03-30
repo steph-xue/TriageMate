@@ -11,38 +11,42 @@ export default function ResultScreen() {
       <Text style={styles.title}>Report Preview</Text>
 
       <ScrollView style={styles.scrollArea} contentContainerStyle={{ paddingBottom: 40 }}>
-        <View style={styles.section}>
-        <Text style={styles.heading}>
-        {" "}
-        <Ionicons name="chatbox-ellipses" size={25} color="#ffffff" /> {"  "}Presenting Complaint
-        </Text>
+      <View style={styles.section}>
+          <View style={styles.headingRow}>
+            <Ionicons name="chatbox-ellipses" size={25} color="#ffffff" style={styles.icon} />
+            <Text style={styles.heading}>Chief Complaint</Text>
+          </View>
           <Text style={styles.body}>{chiefComplaint}</Text>
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.heading}>
-          {" "}
-            <Ionicons name="document-text" size={25} color="#ffffff" /> {"  "}Symptom Summary</Text>
+          <View style={styles.headingRow}>
+            <Ionicons name="document-text" size={25} color="#ffffff" style={styles.icon} />
+            <Text style={styles.heading}>Symptom Summary</Text>
+          </View>
           <Text style={styles.body}>{symptomDetails}</Text>
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.heading}>
-          {" "}
-            <Ionicons name="alert-circle" size={25} color="#ffdddd" /> {"  "}Risk Factors
-          </Text>
+          <View style={styles.headingRow}>
+            <Ionicons name="warning" size={25} color="#ffffff" style={styles.icon} />
+            <Text style={styles.heading}>Risk Factors</Text>
+          </View>
           <Text style={styles.body}>{riskFactors}</Text>
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.redFlagHeading}>{" "}⚠️ {"  "}Detected Red Flags</Text>
-          <Text style={styles.redFlagText}>{redFlags}</Text>
+          <View style={styles.headingRow}>
+            <Ionicons name="alert-circle" size={25} color="#ffffff" style={styles.icon} />
+            <Text style={styles.heading}>Potential Red Flags</Text>
+          </View>
+          <Text style={styles.body}>{redFlags}</Text>
         </View>
       </ScrollView>
 
       {/* Submit Button */}
-      <TouchableOpacity style={styles.submitButton} onPress={() => console.log("Confirmed & submitted")}>
-        <Text style={styles.submitButtonText}>CONFIRM & SUBMIT</Text>
+      <TouchableOpacity style={styles.submitButton} onPress={() => router.push('/submission')}>
+        <Text style={styles.submitButtonText}>Confirm & Submit</Text>
       </TouchableOpacity>
     </View>
   );
@@ -78,26 +82,24 @@ const styles = StyleSheet.create({
     borderBottomColor: "#ffffff33",
     paddingBottom: 10,
   },
+  headingRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  icon: {
+    marginRight: 8,
+    marginTop: -12,
+  },
   heading: {
     fontSize: 18,
     fontWeight: "700",
     color: "#ffffff",
-    marginBottom: 6,
+    marginBottom: 10,
   },
   body: {
-    fontSize: 16,
-    color: "#e0e0e0",
-    lineHeight: 22,
-  },
-  redFlagHeading: {
     fontSize: 18,
-    fontWeight: "700",
-    color: "#ffdddd",
-    marginBottom: 6,
-  },
-  redFlagText: {
-    fontSize: 16,
-    color: "#ffdddd",
+    color: "#e0e0e0",
     lineHeight: 22,
   },
   submitButton: {

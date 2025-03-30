@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import NavBar from "./components/navbar";
 
 
-export default function ProfilePage() {
+export default function ProfileScreen() {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={require('../assets/images/patient.png')} />
