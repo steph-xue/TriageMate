@@ -1,9 +1,12 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import { router } from 'expo-router';
+import { Dimensions } from 'react-native';
 
+const screenWidth = Dimensions.get('window').width;
 
 export default function NavBar() {
+
   return (
     <View style={styles.tabBar}>
       <TouchableOpacity style={styles.tabButtonSymptom} onPress={() => router.push('/input')}>
@@ -23,8 +26,8 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       position: 'absolute',
       bottom: 0,
-      height: 60,
-      width: '100%',
+      height: 100,
+      width: screenWidth,
       borderTopColor: '#000000',
       backgroundColor: '#1c2447',
       justifyContent: 'space-around',
@@ -38,5 +41,10 @@ const styles = StyleSheet.create({
         flex: 1, 
         alignItems: 'center',  
     },
-    tabText: { fontSize: 16, color: '#ffffff', fontWeight: 'bold' },
+    tabText: { 
+        fontSize: 16, 
+        color: '#ffffff', 
+        fontWeight: 'bold',
+        paddingBottom: 30,
+    },
   });

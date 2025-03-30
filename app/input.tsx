@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { router } from "expo-router";
+import NavBar from "./components/navbar";
 
 export default function InputScreen() {
   const [text, setText] = useState("");
@@ -52,7 +53,7 @@ export default function InputScreen() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.container}
       >
-        <Text style={styles.label}>Symptom Input</Text>
+        <Text style={styles.label}>Input Your Symptoms:</Text>
         <TextInput
           style={styles.input}
           placeholder="Describe your symptoms here..."
@@ -66,6 +67,7 @@ export default function InputScreen() {
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
+        <NavBar/>
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
   );
@@ -82,12 +84,11 @@ const styles = StyleSheet.create({
       fontSize: 25,
       fontWeight: 700,
       color: '#ffffff',
-      marginTop: 30,
       marginBottom: 10,
       textAlign: "center",
     },
     input: {
-      height: 500,
+      height: 450,
       borderColor: "#999",
       borderWidth: 1,
       borderRadius: 8,
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#ffffff',
       marginVertical: 40,
       paddingVertical: 12,
-      paddingHorizontal: 24,
+      paddingHorizontal: 50,
       borderRadius: 8,
     },
     buttonText: {
