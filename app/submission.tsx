@@ -3,13 +3,14 @@ import { View, Text, Image, StyleSheet, Button, TouchableOpacity } from 'react-n
 import { router } from 'expo-router';
 
 
-export default function LandingScreen() {
+export default function SubmissionSuccessScreen() {
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('../assets/images/logo.png')} />
-      <Text style={styles.title}>Speak or type your symptoms in any language</Text>
+      <Image style={styles.imageCheck} source={require('../assets/images/check-mark.png')} />
+      <Text style={styles.title}>Submission Success</Text>
+      <Text style={styles.text}>Your report has been sent to the healthcare triage team.</Text>
       <TouchableOpacity style={styles.button} onPress={() => router.push('/input')}>
-        <Text style={styles.buttonText}>Start</Text>
+        <Text style={styles.buttonText}>Submit Another Report</Text>
       </TouchableOpacity>
     </View>
   );
@@ -18,32 +19,40 @@ export default function LandingScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: '#0b2c52',
   },
-  image: {
-    width: 400,
-    height: 400,
-    marginTop: -20,
+  imageCheck: {
+    width: 250,
+    height: 250,
+    marginTop: 100,
   },
   title: {
-    fontSize: 20,
-    fontWeight: 700,
+    fontSize: 35,
+    fontWeight: 800,
     color: '#ffffff',
-    marginBottom: 40,
+    marginBottom: 50,
     textAlign: 'center',
-    width: 280,
+    width: 400,
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: 500,
+    color: '#ffffff',
+    marginBottom: 60,
+    textAlign: 'center',
+    width: 300,
   },
   button: {
     backgroundColor: '#ffffff',
     marginVertical: 30,
-    paddingVertical: 16,
+    paddingVertical: 18,
     paddingHorizontal: 30,
     borderRadius: 8,
   },
   buttonText: {
-    fontSize: 25,
+    fontSize: 22,
     fontWeight: '700',
     color: '#0b2c52',
     textAlign: 'center',

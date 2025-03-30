@@ -17,7 +17,7 @@ export default function RootLayout() {
       <Stack.Screen
         name="input"
         options={{ 
-            title: "Symptom Input",
+            title: "Symptoms",
             headerStyle: { backgroundColor: '#1c2447' },
             headerTintColor: '#fff', 
             headerShadowVisible: false
@@ -44,7 +44,16 @@ export default function RootLayout() {
       <Stack.Screen
         name="result"
         options={{ 
-            title: "result",
+            title: "Triage Report",
+            headerStyle: { backgroundColor: '#1c2447' },
+            headerTintColor: '#fff', 
+            headerShadowVisible: false
+        }}
+      />
+      <Stack.Screen
+        name="submission"
+        options={{ 
+            title: "Submission",
             headerStyle: { backgroundColor: '#1c2447' },
             headerTintColor: '#fff', 
             headerShadowVisible: false

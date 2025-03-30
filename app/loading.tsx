@@ -15,8 +15,12 @@ export default function LoadingScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Processing</Text>
-      <Text style={styles.subtitle}>Analyzing your symptoms...</Text>
-      <ActivityIndicator size="large" color="#ffffff" style={styles.spinner} />
+      <Text style={styles.subtitle}>Summarizing your symptoms...</Text>
+      <ActivityIndicator
+        size="large"
+        color="#ffffff"
+        style={[styles.spinner, { transform: [{ scale: 1.5 }] }]} 
+      />
     </View>
   );
 }
@@ -30,14 +34,14 @@ const styles = StyleSheet.create({
       paddingHorizontal: 20,
     },
     title: {
-      fontSize: 32,
+      fontSize: 40,
       fontWeight: "700",
       color: "#ffffff",
       marginBottom: 20,
       textAlign: "center",
     },
     subtitle: {
-      fontSize: 18,
+      fontSize: 20,
       color: "#ffffff",
       marginBottom: 30,
       textAlign: "center",
@@ -45,5 +49,6 @@ const styles = StyleSheet.create({
     spinner: {
       marginTop: 10,
       marginBottom: 70,
+      width: 200,
     },
   });
