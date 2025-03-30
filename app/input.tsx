@@ -21,7 +21,7 @@ export default function InputScreen() {
     // router.push("/loading");
 
     try {
-      const response = await fetch("http://localhost:3000/", {  //PUT COMPUTER IP ADDRESS HERE
+      await fetch("http://206.87.155.227:3000/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
