@@ -22,7 +22,6 @@ export default function InputScreen() {
 
     try {
       const response = await fetch("http://128.189.196.182:3000/", {
-        main
         method: "POST",
         headers: {
           "Content-Type": "application/json",
