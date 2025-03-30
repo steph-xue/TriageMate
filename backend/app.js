@@ -14,10 +14,10 @@ app.use(express.json());
 app.use(cors());
 const port = process.env.PORT || 3000;
 
-var corsOption = {
-  origin: ["http://localhost:8081", "http://localhost:3000"],
-  optionsSuccessStatus: 200,
-};
+// var corsOption = {
+//   origin: ["http://localhost:8081", "http://localhost:3000"],
+//   optionsSuccessStatus: 200,
+// };
 
 const triageResponse = {
   chiefComplaint: String,
@@ -40,7 +40,7 @@ const triageSchema = new mongoose.Schema({
 
 const TriageResponse = mongoose.model("TriageResponse", triageSchema);
 
-app.post('/', cors(corsOption), async (req, res) => {
+app.post('/', async (req, res) => {
   try {
     const text = req.body.data;
     const triagePrompt = `You are a multilingual medical triage assistant. Here is the user’s free-text symptom description: ${text}. Given the user's free-text symptom description in any language, do the following:  
@@ -98,7 +98,7 @@ app.post('/', cors(corsOption), async (req, res) => {
 });
 
 // get triage response history
-app.get('/', cors(corsOption), async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     const result = await TriageResponse.find({});
     res.json(result);
