@@ -45,7 +45,7 @@ export default function InputScreen() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.container}
       >
-        <Text style={styles.label}>Symptom Input</Text>
+        <Text style={styles.label}>Input Your Symptoms: </Text>
         <TextInput
           style={styles.input}
           placeholder="Describe your symptoms here..."
@@ -81,12 +81,10 @@ const styles = StyleSheet.create({
     },
     input: {
       height: 500,
-      borderColor: "#999",
-      borderWidth: 1,
       borderRadius: 8,
       paddingHorizontal: 12,
       paddingTop: 12,
-      fontSize: 16,
+      fontSize: 18,
       backgroundColor: "#f9f9f9",
       textAlignVertical: "top",
       marginVertical: 20,
