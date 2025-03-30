@@ -14,11 +14,6 @@ app.use(express.json());
 app.use(cors());
 const port = process.env.PORT || 3000;
 
-// var corsOption = {
-//   origin: ["https://localhost:8081", "https://localhost:3000", "https://128.189.196.182:8081", "https://128.189.196.182:3000/"],
-//   optionsSuccessStatus: 200,
-// };
-
 const triageResponse = {
   chiefComplaint: String,
   symptomDetails: String,
@@ -40,6 +35,7 @@ const triageSchema = new mongoose.Schema({
 
 const TriageResponse = mongoose.model("TriageResponse", triageSchema);
 
+// make triage response
 app.post('/', async (req, res) => {
   try {
     const text = req.body.data;
@@ -98,10 +94,38 @@ app.post('/', async (req, res) => {
   }
 });
 
-// get triage response history
+// get all triage response history
 app.get('/', async (req, res) => {
   try {
     const result = await TriageResponse.find({});
+    res.json(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.get('/:id', async (req, res) => {
+  try {
+    const result = await TriageResponse.findById(req.params.id);
+    if (!result) {
+      return res.status(404).json({ error: 'Profile not found' });
+    }
+    res.json(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+// delete a triage response
+app.delete('/:id', async (req, res) => {
+  try {
+    const result = await TriageResponse.findByIdAndDelete(req.params.id);
+    if (!result) {
+      return res.status(404).json({ error: 'Profile not found' });
+    }
+    console.log("1 document deleted");
     res.json(result);
   } catch (err) {
     console.error(err);
