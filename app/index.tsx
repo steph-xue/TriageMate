@@ -3,7 +3,6 @@ import { View, Text, Image, StyleSheet, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LandingPage from './landing';
-import TextInputBox from "../components/TextInputBox";
 import { router } from 'expo-router';
 
 // const Stack = createNativeStackNavigator();
