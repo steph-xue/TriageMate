@@ -28,7 +28,7 @@ Communicating health concerns can be overwhelming — especially when symptoms a
 <br>
 
 ## What it does
-Our application
+TriageMate is an AI-powered hospital triage assistant that streamlines symptom reporting and risk assessment — where smart tech meets compassionate care. Our application transforms the traditional triage experience by enabling users to describe their symptoms through voice or text in any language, which is then intelligently translated, analyzed, and structured into a concise report for healthcare providers. Whether you're managing patient flow, reducing language barriers, or enhancing clinical decision-making, TriageMate empowers both patients and healthcare teams with faster, smarter, and more accessible triage.
 <br>
 <br>
 Users can:
