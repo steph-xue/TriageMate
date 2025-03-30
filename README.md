@@ -32,10 +32,12 @@ TriageMate is an AI-powered hospital triage assistant that streamlines symptom r
 <br>
 <br>
 Users can:
-  - Log
+  - Input their symptoms through voice or text in any language 
+  - The application will translate and parse through their input to generate a concise triage report for healthcare providers that they can review before confirming and submitting it to be stored in the database to be sent to the healthcare provider
 
 <br>
 
+## User Flow
 <p align="center">
   <img src="assets/screenshots/layout1.png" alt="logo" width="800"/>
 </p>
@@ -47,20 +49,19 @@ Users can:
 ## Features
 
 ### Landing screen
-- Welcomes the user
+- Welcomes the user to the application
 <p align="center">
   <img src="assets/screenshots/landing.jpg" alt="landing" height="500"/>
 </p>
 
 ### Profile screen
-- Allows
+- Allows the user to view their profile with demographic information including their name, date of birth, age, personal health number, address, and phone number
 <p align="center">
   <img src="assets/screenshots/profile.jpg" alt="profile" height="500"/>
 </p>
 
 ### Symptom input screen
-- Allows
-
+- The user can input their symptoms through voice or text in any language 
 <p align="center">
   <img src="assets/screenshots/input1.jpg" alt="input1" height="500" />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -69,13 +70,14 @@ Users can:
 
 
 ### Processing screen
-- Allows 
+- Displays a processing/loading screen while the application generates the triage report
 <p align="center">
   <img src="assets/screenshots/processing.jpg" alt="processing" height="500"/>
 </p>
 
 ### Triage results screen
-- Allows 
+- Displays a structured triage report with details including the patient's chief complaint, symptom summary, risk factors, and potential red flags
+- The user can confirm the information on the report before submitting it to be stored in the database to be sent to the healthcare provider
 <p align="center">
   <img src="assets/screenshots/results1.jpg" alt="results1" height="500" />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
