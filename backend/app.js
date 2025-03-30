@@ -1,7 +1,7 @@
 const { GoogleGenAI } = require("@google/genai");
 const express = require('express');
-const request = require('request');
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv').config();
 
 const database_uri = process.env.ATLAS_URI;
@@ -11,7 +11,13 @@ const ai = new GoogleGenAI({ apiKey: gemini_ai_api });
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 const port = process.env.PORT || 3000;
+
+var corsOption = {
+  origin: ["http://localhost:8081", "http://localhost:3000"],
+  optionsSuccessStatus: 200,
+};
 
 const triageResponse = {
   chiefComplaint: String,
@@ -34,61 +40,72 @@ const triageSchema = new mongoose.Schema({
 
 const TriageResponse = mongoose.model("TriageResponse", triageSchema);
 
-app.post('/', async (req, res) => {
-    try {
-        const data = req.body.data;
-        const triagePrompt = `You are a multilingual medical triage assistant. Here is the user’s free-text symptom description: ${data}. Given the user's free-text symptom description in any language, do the following:  
+app.post('/', cors(corsOption), async (req, res) => {
+  try {
+    const text = req.body.data;
+    const triagePrompt = `You are a multilingual medical triage assistant. Here is the user’s free-text symptom description: ${text}. Given the user's free-text symptom description in any language, do the following:  
 
-        Translate the input into English (if not already in English).  
-        Extract and structure the relevant medical information into a triage report with the following sections:  
+    Translate the input into English (if not already in English).  
+    Extract and structure the relevant medical information into a triage report with the following sections:  
         
-        1. Chief complaint (1-2 sentences).  
-        2. Symptom details (such as onset, duration, intensity/severity, location, characteristics) in a single paragraph.  
-        3. Risk factors (medical risk factors like age or medical conditions, family history, environmental risk factors like contact with sick individuals, recent hospitalizations).  
-        4. Red flag symptoms (symptoms that may indicate serious or urgent conditions).  
+    1. Chief complaint (1-2 sentences).  
+    2. Symptom details (such as onset, duration, intensity/severity, location, characteristics) in a single paragraph.  
+    3. Risk factors (medical risk factors like age or medical conditions, family history, environmental risk factors like contact with sick individuals, recent hospitalizations).  
+    4. Red flag symptoms (symptoms that may indicate serious or urgent conditions).  
         
-        Respond with **only a valid JSON object**, without any additional explanations, labels, or formatting. Ensure the JSON contains these keys:  
-        - "chiefComplaint"  
-        - "symptomDetails"  
-        - "riskFactors"  
-        - "redFlags"  
+    Respond with **only a valid JSON object**, without any additional explanations, labels, or formatting. Ensure the JSON contains these keys:  
+    - "chiefComplaint"  
+    - "symptomDetails"  
+    - "riskFactors"  
+    - "redFlags"  
         
-        Example of expected response:  
-        {  
-          "chiefComplaint": "Difficulty breathing and wheezing that started yesterday afternoon, with limited relief from Ventolin.",  
-          "symptomDetails": "The patient reports onset of breathing difficulty yesterday afternoon, characterized by chest tightness and wheezing.",  
-          "riskFactors": "History of similar episodes, recent cold.",  
-          "redFlags": "Shortness of breath at rest, ineffectiveness of usual treatment."
-        }  
+    Example of expected response:  
+    {  
+      "chiefComplaint": "Difficulty breathing and wheezing that started yesterday afternoon, with limited relief from Ventolin.",  
+      "symptomDetails": "The patient reports onset of breathing difficulty yesterday afternoon, characterized by chest tightness and wheezing.",  
+      "riskFactors": "History of similar episodes, recent cold.",  
+      "redFlags": "Shortness of breath at rest, ineffectiveness of usual treatment."
+    }  
         
-        Do not respond or talk about anything not medical related. Do not include any extra formatting, explanations, or metadata. Only return the JSON object itself.`;
+    Do not respond or talk about anything not medical related. Do not include any extra formatting, explanations, or metadata. Only return the JSON object itself.`;
 
-        const response = await ai.models.generateContent({
-            model: "gemini-2.0-flash",
-            contents: triagePrompt,
+    const response = await ai.models.generateContent({
+        model: "gemini-2.0-flash",
+        contents: triagePrompt,
 
-        });
+    });
 
-        // remove the random formatting around the response returned
-        const cleanJsonString = response.text.replace(/```json\n/, "").replace(/\n```/, "").trim();
+    // remove the random formatting around the response returned
+    const cleanJsonString = response.text.replace(/```json\n/, "").replace(/\n```/, "").trim();
 
-        const parsedData = JSON.parse(cleanJsonString);
+    const parsedData = JSON.parse(cleanJsonString);
 
-        const triageResponse = await TriageResponse.create({
-          freeText: data,
-          triageResponse: {
-            chiefComplaint: parsedData.chiefComplaint,
-            symptomDetails: parsedData.symptomDetails,
-            riskFactors: parsedData.riskFactors,
-            redFlags: parsedData.redFlags
-          }
-        });
+    const triageResponse = await TriageResponse.create({
+      freeText: text,
+      triageResponse: {
+        chiefComplaint: parsedData.chiefComplaint,
+        symptomDetails: parsedData.symptomDetails,
+        riskFactors: parsedData.riskFactors,
+        redFlags: parsedData.redFlags
+      }
+    });
 
-        res.status(200).json({ response: triageResponse});
-    } catch (error) {
-        console.error("Error:", error);
-        res.status(500).send("Internal Server Error");
-    }
+    res.status(200).json({ response: triageResponse});
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// get triage response history
+app.get('/', cors(corsOption), async (req, res) => {
+  try {
+    const result = await TriageResponse.find({});
+    res.json(result);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 mongoose.connect(database_uri, { useNewUrlParser: true, useUnifiedTopology: true });

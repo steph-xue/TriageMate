@@ -14,25 +14,33 @@ import {
 
 export default function TextInputBox() {
   const [text, setText] = useState("");
+  const [triageResponse, setTriageResponse] = useState();
 
   const handleSubmit = async () => {
     Keyboard.dismiss();
   
     try {
-      const response = await fetch("http://128.189.196.182:3000/", {
+      const response = await fetch("http://localhost:3000/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ data: text }),
-      });
-  
-      const json = await response.json();
-      console.log("AI response:", json);
-  
-      setText("");
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          setTriageResponse(data.response.triageResponse);
+        })
+        .catch(error => {
+          console.error(error);
+        })
     } catch (error) {
-      console.error("Error sending to backend:", error);
+      console.error(error);
     }
   };
 
