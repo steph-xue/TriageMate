@@ -7,12 +7,32 @@ export default function RootLayout() {
     <Stack>
       <Stack.Screen
         name="index"
-        options={{ title: "TriageMate" }}
+        options={{ 
+            title: "TriageMate",
+            headerStyle: { backgroundColor: '#1c2447' },
+            headerTintColor: '#fff', 
+            headerShadowVisible: false,
+        }}
       />
       <Stack.Screen
         name="input"
-        options={{ title: "Symptom Input" }}
+        options={{ 
+            title: "Symptom Input",
+            headerStyle: { backgroundColor: '#1c2447' },
+            headerTintColor: '#fff', 
+            headerShadowVisible: false
+        }}
+      />
+      <Stack.Screen
+        name="patient"
+        options={{ 
+            title: "Patient Profile",
+            headerStyle: { backgroundColor: '#1c2447' },
+            headerTintColor: '#fff', 
+            headerShadowVisible: false
+        }}
       />
     </Stack>
   );
 }
+
