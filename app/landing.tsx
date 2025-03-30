@@ -6,7 +6,7 @@ import { router } from 'expo-router';
 export default function LandingPage() {
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('../assets/images/TriageMate.png')} />
+      <Image style={styles.image} source={require('../assets/images/logo.png')} />
       <Text style={styles.title}>Speak or type your symptoms in any language</Text>
       <TouchableOpacity style={styles.button} onPress={() => router.push('/input')}>
         <Text style={styles.buttonText}>Start</Text>
