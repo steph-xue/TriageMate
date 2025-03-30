@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Text, Image, StyleSheet, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LandingPage from './LandingPage';
+import LandingPage from './landing';
 import TextInputBox from "../components/TextInputBox";
 import { router } from 'expo-router';
 
@@ -20,4 +20,3 @@ import { router } from 'expo-router';
 export default function Home() {
   return <LandingPage />;
 }
-

@@ -11,38 +11,33 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { router } from "expo-router";
+import NavBar from "./components/navbar";
 
 export default function InputScreen() {
   const [text, setText] = useState("");
-  const [triageResponse, setTriageResponse] = useState();
 
   const handleSubmit = async () => {
     Keyboard.dismiss();
     // router.push("/loading");
 
     try {
-      await fetch("http://206.87.155.227:3000/", {
+      const response = await fetch("http://128.189.196.182:3000/", {
+        main
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ data: text }),
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setTriageResponse(data.response.triageResponse);
-        setText("");
-      })
-      .catch(error => {
-        console.error(error);
-      })
+      });
+
+      const json = await response.json();
+      console.log("AI response:", json);
+
+      setText("");
+      // router.push("/result"); // optionally go to a result screen
     } catch (error) {
-      console.error(error);
+      console.error("Error sending to backend:", error);
+      // router.push("/error"); // optional error screen
     }
   };
 
@@ -52,7 +47,7 @@ export default function InputScreen() {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.container}
       >
-        <Text style={styles.label}>Symptom Input</Text>
+        <Text style={styles.label}>Input Your Symptoms: </Text>
         <TextInput
           style={styles.input}
           placeholder="Describe your symptoms here..."
@@ -66,6 +61,7 @@ export default function InputScreen() {
         <TouchableOpacity style={styles.button} onPress={handleSubmit}>
           <Text style={styles.buttonText}>Submit</Text>
         </TouchableOpacity>
+        <NavBar/>
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
   );
@@ -88,12 +84,10 @@ const styles = StyleSheet.create({
     },
     input: {
       height: 500,
-      borderColor: "#999",
-      borderWidth: 1,
       borderRadius: 8,
       paddingHorizontal: 12,
       paddingTop: 12,
-      fontSize: 16,
+      fontSize: 20,
       backgroundColor: "#f9f9f9",
       textAlignVertical: "top",
       marginVertical: 20,
