@@ -137,6 +137,7 @@ Next for TriageMate, we aim to expand its capabilities to make it even more impa
 - Start the frontend Expo Server by typing in the command line
     - ```npx expo start```
 - Start the backend server by typing in the command line
+    - ```cd backend```
     - ```node app.js```
 - It will provide you a url for the local host to view it from your computer and a QR code to run it on your phone
 - Scan the QR code using your phone camera to open the application in your Expo Go app
