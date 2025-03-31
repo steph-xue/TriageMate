@@ -96,7 +96,7 @@ Users can:
 ## How we built it
 - Frontend: Developed with React Native and TypeScript using the Expo platform, enabling a smooth and responsive cross-platform mobile experience
 - Backend: Leverages Node.js with Express.js to handle API requests and server-side logic
-- Databse: MongoDB provides a secure and flexible database for storing report data
+- Database: MongoDB provides a secure and flexible database for storing report data
 - API: The app integrates the Gemini 2.0 Flash API For AI-powered symptom translation and parsing, which translates and parses multilingual user input into structured medical triage reports
 
 <br>
