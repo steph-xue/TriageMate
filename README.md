@@ -86,7 +86,7 @@ Users can:
 
 
 ### Submission successs screen
-- Allows 
+- Confirms that the triage report has been successfully submitted and stored to the database in the backend
 <p align="center">
   <img src="assets/screenshots/success.jpg" alt="success" height="500"/>
 </p>
@@ -94,7 +94,10 @@ Users can:
 <br>
 
 ## How we built it
-The frontend is developed with React Native and TypeScript using the Expo platform, enabling a smooth and responsive cross-platform mobile experience. The backend leverages Node.js with Express.js to handle API requests and server-side logic, while MongoDB provides a secure and flexible database for storing report data. For AI-powered symptom translation and parsing, the app integrates the Gemini 2.0 Flash API, which translates and parses multilingual user input into structured medical triage reports.
+- Frontend: Developed with React Native and TypeScript using the Expo platform, enabling a smooth and responsive cross-platform mobile experience
+- Backend: Leverages Node.js with Express.js to handle API requests and server-side logic
+- Databse: MongoDB provides a secure and flexible database for storing report data
+- API: The app integrates the Gemini 2.0 Flash API For AI-powered symptom translation and parsing, which translates and parses multilingual user input into structured medical triage reports
 
 <br>
 
@@ -117,6 +120,7 @@ Through this project, we learned how to build a fully functional mobile applicat
 ## What's next for TriageMate
 Next for TriageMate, we aim to expand its capabilities to make it even more impactful in real-world healthcare settings. This includes implementing secure user authentication, enable persistent patient profiles, and allow direct integration with electronic health records (EHR) systems or healthcare provider dashboards. On the frontend, we want to improve the user experience with animations, accessibility features, and a more dynamic report visualization. Ultimately, we envision TriageMate evolving into a reliable digital assistant that bridges communication gaps and supports faster, more inclusive patient care across diverse healthcare environments.
 
+<br>
 
 ## How to Run Locally (Frontend & Backend)
 - Install the latest version of node
