@@ -94,28 +94,28 @@ Users can:
 <br>
 
 ## How we built it
-- Front-end: The frontend was built with 
-- Back-end & database: We developed this application using 
+The frontend is developed with React Native and TypeScript using the Expo platform, enabling a smooth and responsive cross-platform mobile experience. The backend leverages Node.js with Express.js to handle API requests and server-side logic, while MongoDB provides a secure and flexible database for storing report data. For AI-powered symptom translation and parsing, the app integrates the Gemini 2.0 Flash API, which translates and parses multilingual user input into structured medical triage reports.
 
 <br>
 
 ## Challenges we ran into
-Some challenges we ran into include 
+Most of our team had never worked with React Native or built a mobile app before, so the development process was a challenging learning experience. Getting the React Native environment set up with Expo and running the app smoothly on the mobile Expo Go platform proved to be tricky at first. We also encountered difficulties connecting the frontend to the backend on a mobile device, which required careful debugging to ensure seamless integration. Throughout development, we dealt with merge conflicts, platform-specific issues, and lots of trial-and-error debugging, all of which pushed us to grow rapidly as a team.
 
 <br>
 
 ## Accomplishments that we're proud of
-One of our biggest achievements was 
+- Managed to successfully build a multilingual AI-powered triage system that translates and parses user symptoms from any language that aims to improve accessibility for diverse patient populations
+- Designed a clean, intuitive mobile app using React Native and TypeScript, making symptom input and report confirmation simple and user-friendly
 
 <br>
 
 ## What we learned
-We gained valuable insights into 
+Through this project, we learned how to build a fully functional mobile application using React Native and the Expo platform, gaining hands-on experience with cross-platform development and mobile integration. We developed a deeper understanding of how to structure a React Native project, connect it to a backend, and debug issues specific to mobile environments. A key highlight was learning how to prompt engineer healthcare-related data—specifically, how to extract only the relevant clinical details from free-text input and translate it into a structured triage report using AI. Additionally, we strengthened our collaboration skills, learning how to work effectively as a team, manage merge conflicts, and support each other in navigating new tools and technologies.
 
 <br>
 
 ## What's next for TriageMate
-For TriageMate,
+Next for TriageMate, we aim to expand its capabilities to make it even more impactful in real-world healthcare settings. This includes implementing secure user authentication, enable persistent patient profiles, and allow direct integration with electronic health records (EHR) systems or healthcare provider dashboards. On the frontend, we want to improve the user experience with animations, accessibility features, and a more dynamic report visualization. Ultimately, we envision TriageMate evolving into a reliable digital assistant that bridges communication gaps and supports faster, more inclusive patient care across diverse healthcare environments.
 
 
 ## How to Run Locally (Frontend & Backend)
