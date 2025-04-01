@@ -93,6 +93,14 @@ Users can:
   <img src="assets/screenshots/success.jpg" alt="success" height="500"/>
 </p>
 
+### Other Languages
+- User can type or speak their symptoms in any chosen language
+<p align="center">
+  <img src="assets/screenshots/chinese-input.png" alt="chinese-input" height="500" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/screenshots/chinese-result.png" alt="chinese-result" height="500" />
+</p>
+
 <br>
 
 ## How we built it
