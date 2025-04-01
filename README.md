@@ -29,7 +29,7 @@ Communicating health concerns can be overwhelming — especially when symptoms a
 
 <br>
 
-## What it does
+## What It Does
 TriageMate is an AI-powered hospital triage assistant that streamlines symptom reporting and risk assessment — where smart tech meets compassionate care. Our application transforms the traditional triage experience by enabling users to describe their symptoms through voice or text in any language, which is then intelligently translated, analyzed, and structured into a concise report for healthcare providers. Whether you're managing patient flow, reducing language barriers, or enhancing clinical decision-making, TriageMate empowers both patients and healthcare teams with faster, smarter, and more accessible triage.
 <br>
 <br>
@@ -48,21 +48,23 @@ Users can:
   <img src="assets/screenshots/layout2.png" alt="logo" width="800"/>
 </p>
 
+<br>
+
 ## Features
 
-### Landing screen
+### Landing Screen
 - Welcomes the user to the application
 <p align="center">
   <img src="assets/screenshots/landing.jpg" alt="landing" height="500"/>
 </p>
 
-### Profile screen
+### Profile Screen
 - Allows the user to view their profile with demographic information including their name, date of birth, age, personal health number, address, and phone number
 <p align="center">
   <img src="assets/screenshots/profile.jpg" alt="profile" height="500"/>
 </p>
 
-### Symptom input screen
+### Symptom Input Screen
 - The user can input their symptoms through voice or text in any language 
 <p align="center">
   <img src="assets/screenshots/input1.jpg" alt="input1" height="500" />
@@ -71,13 +73,13 @@ Users can:
 </p>
 
 
-### Processing screen
+### Processing Screen
 - Displays a processing/loading screen while the application generates the triage report
 <p align="center">
   <img src="assets/screenshots/processing.jpg" alt="processing" height="500"/>
 </p>
 
-### Triage results screen
+### Triage Results Screen
 - Displays a structured triage report with details including the patient's chief complaint, symptom summary, risk factors, and potential red flags
 - The user can confirm the information on the report before submitting it to be stored in the database to be sent to the healthcare provider
 <p align="center">
@@ -87,7 +89,7 @@ Users can:
 </p>
 
 
-### Submission successs screen
+### Submission Successs Screen
 - Confirms that the triage report has been successfully submitted and stored to the database in the backend
 <p align="center">
   <img src="assets/screenshots/success.jpg" alt="success" height="500"/>
@@ -103,7 +105,7 @@ Users can:
 
 <br>
 
-## How we built it
+## How We Built It
 - Frontend: Developed with React Native and TypeScript using the Expo platform, enabling a smooth and responsive cross-platform mobile experience
 - Backend: Leverages Node.js with Express.js to handle API requests and server-side logic
 - Database: MongoDB provides a secure and flexible database for storing report data
@@ -111,23 +113,23 @@ Users can:
 
 <br>
 
-## Challenges we ran into
+## Challenges We Ran Into
 Most of our team had never worked with React Native or built a mobile app before, so the development process was a challenging learning experience. Getting the React Native environment set up with Expo and running the app smoothly on the mobile Expo Go platform proved to be tricky at first. We also encountered difficulties connecting the frontend to the backend on a mobile device, which required careful debugging to ensure seamless integration. Throughout development, we dealt with merge conflicts, platform-specific issues, and lots of trial-and-error debugging, all of which pushed us to grow rapidly as a team.
 
 <br>
 
-## Accomplishments that we're proud of
+## Accomplishments That We're proud Of
 - Managed to successfully build a multilingual AI-powered triage system that translates and parses user symptoms from any language that aims to improve accessibility for diverse patient populations
 - Designed a clean, intuitive mobile app using React Native and TypeScript, making symptom input and report confirmation simple and user-friendly
 
 <br>
 
-## What we learned
+## What We Learned
 Through this project, we learned how to build a fully functional mobile application using React Native and the Expo platform, gaining hands-on experience with cross-platform development and mobile integration. We developed a deeper understanding of how to structure a React Native project, connect it to a backend, and debug issues specific to mobile environments. A key highlight was learning how to prompt engineer healthcare-related data—specifically, how to extract only the relevant clinical details from free-text input and translate it into a structured triage report using AI. Additionally, we strengthened our collaboration skills, learning how to work effectively as a team, manage merge conflicts, and support each other in navigating new tools and technologies.
 
 <br>
 
-## What's next for TriageMate
+## What's Next For TriageMate
 Next for TriageMate, we aim to expand its capabilities to make it even more impactful in real-world healthcare settings. This includes implementing secure user authentication, enable persistent patient profiles, and allow direct integration with electronic health records (EHR) systems or healthcare provider dashboards. On the frontend, we want to improve the user experience with animations, accessibility features, and a more dynamic report visualization. Ultimately, we envision TriageMate evolving into a reliable digital assistant that bridges communication gaps and supports faster, more inclusive patient care across diverse healthcare environments.
 
 <br>
