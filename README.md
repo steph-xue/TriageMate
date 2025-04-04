@@ -8,6 +8,8 @@
 
 <h3>BCS Hacks 2025</h3>
 Devpost link: https://devpost.com/software/TriageMate
+<br>
+<br>
 
 <p align="center">
   <img src="assets/screenshots/logo.png" alt="logo" width="500"/>
