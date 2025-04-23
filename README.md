@@ -147,15 +147,18 @@ Next for TriageMate, we aim to expand its capabilities to make it even more impa
 - Clone the repository from github by typing in the command line
     - HTTPS: ```git clone https://github.com/steph-xue/TriageMate.git```
     - SSH: ```git clone git@github.com:steph-xue/TriageMate.git```
+- Add your computer's local IP address
+    - In app/input.tsx, replace the backend URL (line 25) with your computer’s local IP address (e.g., http://192.168.1.xxx:3000) so your phone can connect to the backend server
+- Add a .env file to the backend folder with the following information:
+  - ```ATLAS_URL="mongodb+srv://url```
+  - ```GEMINIAI="geminiaiapikey"```
 - Install any dependencies by using the command
     - ```npm install```
-- Ensure your computer and phone are on the same wifi network
-- Add your computer's local IP address
-    - Update line 25 in input.tsx in the app folder
 - Start the frontend Expo Server by typing in the command line
     - ```npx expo start```
 - Start the backend server by typing in the command line
     - ```cd backend```
     - ```node app.js```
 - It will provide you a url for the local host to view it from your computer and a QR code to run it on your phone
-- Scan the QR code using your phone camera to open the application in your Expo Go app
+- Ensure your computer and phone are on the same wifi network
+    - Scan the QR code using your phone camera to open the application in your Expo Go app
