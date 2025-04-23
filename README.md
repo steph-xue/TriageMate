@@ -149,6 +149,9 @@ Next for TriageMate, we aim to expand its capabilities to make it even more impa
     - SSH: ```git clone git@github.com:steph-xue/TriageMate.git```
 - Install any dependencies by using the command
     - ```npm install```
+- Ensure your computer and phone are on the same wifi network
+- Add your computer's local IP address
+    - Update line 25 in input.tsx in the app folder
 - Start the frontend Expo Server by typing in the command line
     - ```npx expo start```
 - Start the backend server by typing in the command line
