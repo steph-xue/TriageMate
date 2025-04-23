@@ -138,27 +138,33 @@ Next for TriageMate, we aim to expand its capabilities to make it even more impa
 <br>
 
 ## How to Run Locally (Frontend & Backend)
-- Install the latest version of node
-    - Check the version using the command
-        - ```node --version```
-- Install Expo CLI by using the command
-    - ```npm install -g expo-cli```
-- Download the Expo Go app on your phone (iOS/Android devices)
+- Install the required tools
+    - Install the latest version of node
+        - Check the version using the command
+            - ```node --version```
+    - Install Expo CLI by using the command
+        - ```npm install -g expo-cli```
+    - Download the Expo Go app on your phone (iOS/Android devices)
 - Clone the repository from github by typing in the command line
     - HTTPS: ```git clone https://github.com/steph-xue/TriageMate.git```
     - SSH: ```git clone git@github.com:steph-xue/TriageMate.git```
-- Add your computer's local IP address
-    - In app/input.tsx, replace the backend URL (line 25) with your computer’s local IP address (e.g., http://192.168.1.xxx:3000) so your phone can connect to the backend server
-- Add a .env file to the backend folder with the following information:
-  - ```ATLAS_URL="mongodb+srv://url```
-  - ```GEMINIAI="geminiaiapikey"```
-- Install any dependencies by using the command
-    - ```npm install```
+- Setup environment variables
+    - Create a .env file inside the backend folder with the following information:
+      - ```ATLAS_URL="mongodb+srv://your-mongo-uri"```
+      - ```GEMINIAI="your-gemini-api-key"```
+- Configure network access
+    - Ensure your computer and phone are on the same wifi network
+    - Add your computer's local IP address
+        - In app/input.tsx, replace the backend URL (line 25) with your computer’s local IP address ```(e.g., http://192.168.1.xxx:3000)``` so your phone can connect to the backend server
+- Install any project dependencies
+    - From the root of the project, use command:
+        - ```npm install```
+    - May also need to cd into the backend and use:
+        - ```npm install```
 - Start the frontend Expo Server by typing in the command line
     - ```npx expo start```
 - Start the backend server by typing in the command line
     - ```cd backend```
     - ```node app.js```
 - It will provide you a url for the local host to view it from your computer and a QR code to run it on your phone
-- Ensure your computer and phone are on the same wifi network
-    - Scan the QR code using your phone camera to open the application in your Expo Go app
+- Scan the QR code using your phone camera to open the application in your Expo Go app
