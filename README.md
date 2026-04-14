@@ -6,9 +6,14 @@
   An AI-powered symptom translation and parser for more efficient hospital triage - Empowering patients, supporting providers
 </h2>
 
-<h3>BCS Hacks 2025</h3>
-Devpost link: https://devpost.com/software/TriageMate
-<br>
+<h3 align="center">
+  BCS Hacks 2025
+</h3>
+
+<p align="center">
+  Devpost link: https://devpost.com/software/TriageMate
+</p>
+
 <br>
 
 <p align="center">
