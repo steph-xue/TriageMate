@@ -1,17 +1,13 @@
-<h1 align="center">
-  TriageMate
-</h1>
+<h1 align="center">TriageMate</h1>
+<h2 align="center">(BCS Hacks 2025)</h2>
 
 <h2 align="center">
-  An AI-powered symptom translation and parser for more efficient hospital triage - Empowering patients, supporting providers
+  An AI-powered symptom translation and parser for more efficient hospital triage.<br>
+  Empowering patients, supporting providers.
 </h2>
 
-<h3 align="center">
-  BCS Hacks 2025
-</h3>
-
 <p align="center">
-  Devpost link: https://devpost.com/software/TriageMate
+  Devpost link: <a href="https://devpost.com/software/TriageMate">https://devpost.com/software/TriageMate</a>
 </p>
 
 <br>
@@ -19,7 +15,6 @@
 <p align="center">
   <img src="assets/screenshots/logo.png" alt="logo" width="500"/>
 </p>
-
 
 <br>
 
